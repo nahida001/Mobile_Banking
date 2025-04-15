@@ -15,7 +15,7 @@
                     <img class="w-16" src="./assets/Group.png" alt="">
               
                 <div>
-                    <h1 class="text-3xl font-bold">$ 5000</h1>
+                    <h1 class="text-3xl font-bold">$<span id="main-balance">5000</span></h1>
                     <p class="border-rounded p-1">Available Balance</p>
                 </div>
                 <button class="btn">Log Out</button>
@@ -25,12 +25,12 @@
                 <h1 class="text-2xl font-bold mb-2">🔥 Welcome to Payooo!</h1>
                 <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
            <div class="cards grid grid-cols-3 mt-14 gap-2 p-2">
-                 <div class="box cursor-pointer border p-4 text-center rounded-sm">
+                 <div id="add-money-box" class="box cursor-pointer border p-4 text-center rounded-sm">
                    <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="">
                    <h3>Add Money</h3>  
                  </div>
 
-                 <div class="box border p-4 text-center rounded-sm">
+                 <div id="cashout-box" class="box border p-4 text-center rounded-sm">
                     <img class="w-8 mx-auto" src="./assets/send1.png" alt="">  
                     <h3>Cashout</h3>
                   </div>
@@ -48,40 +48,95 @@
                     <img class="w-8 mx-auto" src="./assets/purse1.png" alt="">  
                   <h3>Pay Bill</h3>
                 </div>
-                  <div class="box border p-4 text-center rounded-sm">
+                  <div id="transaction-box" class="box border p-4 text-center rounded-sm">
                     <img class="w-8 mx-auto" src="./assets/transaction1.png" alt="">  
-                  <h3>Transactions</h3>
+                  <h3>Transactions History</h3>
                 </div>
            </div>
            </section>
-           <!--add money section-->
-           <div class="">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                <div class="card-body">
-                  <fieldset class="fieldset">
-                    <fieldset class="fieldset">
-                        <legend class="fieldset-legend">Select Bank</legend>
-                        <select class="select">
-                          <option disabled selected>Pick a browser</option>
-                          <option>Chrome</option>
-                          <option>FireFox</option>
-                          <option>Safari</option>
-                        </select>
-                        
-                      </fieldset>
-                    <label class="fieldset-label">Email</label>
-                    <input type="email" class="input" placeholder="Email" />
-                    <label class="fieldset-label">Password</label>
-                    <input type="password" class="input" placeholder="Password" />
-                    <div><a class="link link-hover">Forgot password?</a></div>
-                    <button class="btn btn-neutral mt-4">Login</button>
-                  </fieldset>
-                </div>
-              </div>
-            </div>
-          </div>
+           <section id="addmoney">
+            <!--add money section-->
+            <h1 class="text-center text-2xl text-cyan-700">Add Money</h1>
+             <div class="hero-content flex-col lg:flex-row-reverse">
+               <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                 <div class="card-body">
+                   <fieldset class="fieldset">
+                     <fieldset class="fieldset">
+                         <legend class="fieldset-legend">Select Bank</legend>
+                         <select id="allbank" class="select">
+                           <option disabled selected>Pick a browser</option>
+                           <option>Bikash</option>
+                           <option>Nogot</option>
+                           <option>upay</option>
+                         </select>
+                         
+                       </fieldset>
+                     <label class="fieldset-label">Account Number</label>
+                     <input value="019034766" maxlength="11" id="account-number" type="number" class="input" placeholder="type your number" required />
+                     <label class="fieldset-label">Amount</label>
+                     <input type="number" class="input" id="amount" class="input"  placeholder="type your amount" required/>
+                     <label class="fieldset-label">PIN</label>
+                     <input value="1234" type="text" class="input" id="pin" class="input"  placeholder="type your pin" required/>
+                     
+                     <div><a class="link link-hover">Forgot password?</a></div>
+                     <button id="add-money" type="submit" class="btn btn-neutral mt-4">Add Money</button>
+                   </fieldset>
+                 </div>
+               </div>
+             </div>
+         </section>
+
+        <!--Cash out-->
+        <section id="cashout">
+          <h1 class="text-center text-2xl text-cyan-700">Cashout</h1>
+           <div class="hero-content flex-col lg:flex-row-reverse">
+             <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+               <div class="card-body">
+                 <fieldset class="fieldset">
+                   <fieldset class="fieldset">
+                       <legend class="fieldset-legend">Select Bank</legend>
+                       <select id="allbank" class="select">
+                         <option disabled selected>Pick a browser</option>
+                         <option>Bikash</option>
+                         <option>Nogot</option>
+                         <option>upay</option>
+                       </select>
+                       
+                     </fieldset>
+                   <label class="label">
+                  <span class="label-text">Account Number</span>
+                </label>
+                <input id="accountNumber" value="09876543211" type="number" placeholder="Enter your Accountnumber" class="input input-bordered" required />
+             <label class="fieldset-label">Amount</label>
+                   <input type="number" class="input" id="cashout-amount" class="input"  placeholder="type your amount" required/>
+                   <label class="fieldset-label">PIN</label>
+                   <input value="1234" type="text" class="input" id="cashout-pin"  placeholder="type your pin" required/>
+                   
+                   <div><a class="link link-hover">Forgot password?</a></div>
+                   <button id="cashout-btn" type="submit" class="btn btn-neutral mt-4">Cashout</button>
+                 </fieldset>
+               </div>
+             </div>
+           </div>
+         
+       </section> 
+       <!--Transaction history--> 
+
+       <section id="transaction-histroy">
+        <h1 class="text-3xl font-bold text-red-400 text-center p-3">Transaction History</h1>
+       
+        <div id="transaction-container">
+
+        </div>
+      
+      </section>
+      
         </header>
-        </section>       
+        </section> 
+        <script src="./script/addMoney.js"></script> 
+        <script src="./script/toggle.js"></script>  
+        <script src="./script/cashout.js"></script>   
+        <script src="./script/untiles.js"></script>
+        <script src="./script/transactionhistory.js"></script>
 </body>
 </html>
